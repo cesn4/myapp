@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/widgets/nav_item.dart';
 
 class NavigationBar extends StatelessWidget {
   @override
@@ -11,27 +12,9 @@ class NavigationBar extends StatelessWidget {
           color: Colors.white,
           size: 30.0,
         ),
-        RotatedBox(
-          child: Text(
-            'Work',
-            style: TextStyle(color: Colors.white, fontSize: 15.0),
-          ),
-          quarterTurns: 1,
-        ),
-        RotatedBox(
-          child: Text(
-            'About',
-            style: TextStyle(color: Colors.white, fontSize: 15.0),
-          ),
-          quarterTurns: 1,
-        ),
-        RotatedBox(
-          child: Text(
-            'Contact',
-            style: TextStyle(color: Colors.white, fontSize: 15.0),
-          ),
-          quarterTurns: 1,
-        ),
+        NavItem(title: 'Work', onPressed: () {}),
+        NavItem(title: 'About', onPressed: () {}),
+        NavItem(title: 'Contact', onPressed: () {}),
       ],
     );
   }
