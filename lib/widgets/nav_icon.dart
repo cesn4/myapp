@@ -2,17 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:myapp/theme/colors.dart';
 
-class NavItem extends StatefulWidget {
-  final String title;
+class NavIcon extends StatefulWidget {
   final Function onPressed;
 
-  NavItem({@required this.title, @required this.onPressed});
+  NavIcon({@required this.onPressed});
 
   @override
-  _NavItemState createState() => _NavItemState();
+  _NavIconState createState() => _NavIconState();
 }
 
-class _NavItemState extends State<NavItem> {
+class _NavIconState extends State<NavIcon> {
   bool _hovering = false;
 
   void _mouseEnter(bool hover) {
@@ -32,17 +31,10 @@ class _NavItemState extends State<NavItem> {
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 200),
           padding: EdgeInsets.all(10.0),
-          child: RotatedBox(
-            child: Text(
-              widget.title,
-              style: TextStyle(
-                color: _hovering
-                    ? ThemeColor.light
-                    : Colors.white.withOpacity(0.8),
-                fontSize: 15.0,
-              ),
-            ),
-            quarterTurns: 1,
+          child: Icon(
+            Icons.blur_circular,
+            color: _hovering ? ThemeColor.light : Colors.white.withOpacity(0.8),
+            size: 30.0,
           ),
         ),
       ),
