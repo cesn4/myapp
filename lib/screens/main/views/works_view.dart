@@ -33,6 +33,7 @@ class _WorksViewState extends State<WorksView> {
     List projectCategories = categories
         .map((e) => CategoryItem(
               title: e,
+              isActive: projects[_activeIndex].category.contains(e),
             ))
         .toList();
     return Container(
