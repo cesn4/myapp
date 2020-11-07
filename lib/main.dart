@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/views/home/home_view.dart';
+import 'package:myapp/constants/routes.dart';
+import 'package:myapp/screens/main/main_screen.dart';
+import 'package:myapp/screens/main/views/home_view.dart';
+import 'package:myapp/screens/main/views/works_view.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +17,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeView(),
+      initialRoute: Routes.mainScreenRoute,
+      routes: {
+        Routes.mainScreenRoute: (context) => MainScreen(),
+      },
     );
   }
 }
