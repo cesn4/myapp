@@ -1,16 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/theme/colors.dart';
 
-class ProjectTitle extends StatelessWidget {
+class ProjectItem extends StatelessWidget {
   final String title;
-  ProjectTitle({@required this.title});
+  ProjectItem({@required this.title});
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: const EdgeInsets.all(8.0),
       child: Text(
         title,
-        style: TextStyle(color: ThemeColor.light, fontSize: 60),
+        textAlign: TextAlign.end,
+        style: TextStyle(
+            fontSize: 60, fontWeight: FontWeight.w800, color: Colors.white),
       ),
     );
   }

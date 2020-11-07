@@ -9,7 +9,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _currentViewIndex = 0;
+  int _currentViewIndex = 1;
 
   _getCurrentView() {
     switch (_currentViewIndex) {
