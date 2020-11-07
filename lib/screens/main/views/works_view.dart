@@ -6,11 +6,30 @@ import 'package:myapp/widgets/category_item.dart';
 import 'package:myapp/widgets/project_item.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
-class WorksView extends StatelessWidget {
+class WorksView extends StatefulWidget {
+  @override
+  _WorksViewState createState() => _WorksViewState();
+}
+
+class _WorksViewState extends State<WorksView> {
+  int _activeIndex = 0;
+
+  _changeActiveIndex(int index) {
+    setState(() {
+      _activeIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    List projectTitles =
-        projects.map((e) => ProjectItem(title: e.title)).toList();
+    List projectTitles = projects
+        .asMap()
+        .entries
+        .map((e) => ProjectItem(
+              title: e.value.title,
+              isActive: e.key == _activeIndex,
+            ))
+        .toList();
     List projectCategories = categories
         .map((e) => CategoryItem(
               title: e,
@@ -41,7 +60,7 @@ class WorksView extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    height: 180,
+                    height: 150,
                     child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -49,9 +68,12 @@ class WorksView extends StatelessWidget {
                   ),
                   CarouselSlider(
                       options: CarouselOptions(
+                        onPageChanged: (index, reason) =>
+                            _changeActiveIndex(index),
                         aspectRatio: 1,
                         viewportFraction: 0.15,
                         scrollDirection: Axis.vertical,
+                        autoPlay: true,
                       ),
                       items: projectTitles)
                 ],

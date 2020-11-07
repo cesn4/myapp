@@ -3,7 +3,8 @@ import 'package:myapp/theme/colors.dart';
 
 class ProjectItem extends StatelessWidget {
   final String title;
-  ProjectItem({@required this.title});
+  final bool isActive;
+  ProjectItem({@required this.title, @required this.isActive});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -12,7 +13,7 @@ class ProjectItem extends StatelessWidget {
         title,
         textAlign: TextAlign.end,
         style: TextStyle(
-            fontSize: 60, fontWeight: FontWeight.w800, color: Colors.white),
+            fontSize: 60, fontWeight: FontWeight.w800, color: isActive ? ThemeColor.light : ThemeColor.inactiveLight),
       ),
     );
   }

@@ -1,6 +1,6 @@
 class ProjectModel {
   String title;
-  String category;
+  List<String> category;
 
   ProjectModel({this.title, this.category});
 }

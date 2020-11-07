@@ -1,3 +1,3 @@
 List<String> categories = [
-  'Experments', 'Projects', 'Code Examples', 'Realeased', 'In progress'
+  'Experment', 'Project', 'Code Example', 'Realeased', 'In progress'
 ];
