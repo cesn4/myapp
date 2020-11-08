@@ -57,7 +57,23 @@ class ProjectScreen extends StatelessWidget {
             ),
           ),
         ),
-        Positioned(top: 50, left: 50, child: ArrowButton(onTap: () => Navigator.pop(context),)),
+        Positioned(
+            top: 50,
+            left: 50,
+            child: ArrowButton(
+              onTap: () => Navigator.pop(context),
+            )),
+        Positioned(
+          right: 50,
+          bottom: 50,
+          child: Column(
+            children: [
+              Icon( Icons.link_rounded, color: ThemeColor.light,),
+              SizedBox(height: 20),
+              Icon( Icons.code, color: ThemeColor.light,),
+            ],
+          ),
+        )
       ],
     ));
   }

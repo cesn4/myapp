@@ -18,18 +18,17 @@ class NavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            NavIcon(onPressed: homeViewTrigger),
-            NavItem(title: 'Work', onPressed: worksViewTrigger),
-            NavItem(title: 'About', onPressed: aboutViewTrigger),
-            NavItem(title: 'Contact', onPressed: contactViewTrigger),
-          ],
-        ),
-      ],
+    return Container(
+      height: 320,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          NavIcon(onPressed: homeViewTrigger),
+          NavItem(title: 'Work', onPressed: worksViewTrigger),
+          NavItem(title: 'About', onPressed: aboutViewTrigger),
+          NavItem(title: 'Contact', onPressed: contactViewTrigger),
+        ],
+      ),
     );
   }
 }

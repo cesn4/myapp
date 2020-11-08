@@ -36,7 +36,6 @@ class _MainScreenState extends State<MainScreen> {
           children: [
             _getCurrentView(),
             Positioned(
-              height: 280.0,
               top: 50,
               right: 50,
               child: NavigationBar(
