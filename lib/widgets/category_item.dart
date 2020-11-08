@@ -10,11 +10,24 @@ class CategoryItem extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text(
-        title,
-        style: TextStyle(fontSize: 20, color: isActive ? ThemeColor.light : ThemeColor.inactiveLight),
-      ),
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          margin: EdgeInsets.only(right: isActive? 20 : 50),
+          color: ThemeColor.light,
+          width: isActive? 30 : 0,
+          height: 1,
+        ),
+        Text(
+          title,
+          style: TextStyle(
+              fontSize: 20,
+              color: isActive ? ThemeColor.light : ThemeColor.inactiveLight),
+        ),
+      ],
     );
   }
 }

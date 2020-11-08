@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:myapp/constants/categories.dart';
 import 'package:myapp/constants/projects.dart';
+import 'package:myapp/constants/routes.dart';
+import 'package:myapp/screens/project/project_screen.dart';
 import 'package:myapp/widgets/category_item.dart';
 import 'package:myapp/widgets/project_item.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -28,6 +30,11 @@ class _WorksViewState extends State<WorksView> {
         .map((e) => ProjectItem(
               title: e.value.title,
               isActive: e.key == _activeIndex,
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          ProjectScreen(project: projects[e.key]))),
             ))
         .toList();
     List projectCategories = categories
@@ -56,7 +63,7 @@ class _WorksViewState extends State<WorksView> {
                   0.8
                 ])),
             child: Padding(
-              padding: const EdgeInsets.only(left: 50, right: 150),
+              padding: const EdgeInsets.only(right: 150),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
