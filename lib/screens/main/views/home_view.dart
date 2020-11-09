@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:myapp/constants/titles.dart';
+import 'package:myapp/widgets/background_wrapper.dart';
 import 'package:myapp/widgets/classic_button.dart';
 
 class HomeView extends StatefulWidget {
@@ -40,42 +41,25 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              fit: BoxFit.cover,
-              image: NetworkImage(
-                  'https://i.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68'))),
-      child: Align(
-        child: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: FractionalOffset.topCenter,
-                  end: FractionalOffset.bottomCenter,
-                  colors: [
-                Colors.transparent,
-                Colors.black.withOpacity(0.7),
-              ],
-                  stops: [
-                0.0,
-                0.8
-              ])),
-          padding: EdgeInsets.symmetric(vertical: 150.0),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(),
-                Text(
-                  titles[_currentTitleIndex],
-                  style: TextStyle(
-                      fontSize: 70,
-                      fontWeight: FontWeight.w800,
-                      color: Colors.white),
-                ),
-                ClassicButton(),
-              ],
-            ),
+    return BackgroundWrapper(
+      image:
+          'https://i.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68',
+      child: Padding(
+        padding: const EdgeInsets.all(150.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(),
+              Text(
+                titles[_currentTitleIndex],
+                style: TextStyle(
+                    fontSize: 70,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.white),
+              ),
+              ClassicButton(),
+            ],
           ),
         ),
       ),

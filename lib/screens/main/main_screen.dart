@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:myapp/screens/main/views/about_view.dart';
 import 'package:myapp/screens/main/views/home_view.dart';
 import 'package:myapp/screens/main/views/works_view.dart';
 import 'package:myapp/widgets/navigation_bar.dart';
@@ -9,7 +10,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _currentViewIndex = 1;
+  int _currentViewIndex = 2;
 
   _getCurrentView() {
     switch (_currentViewIndex) {
@@ -17,8 +18,8 @@ class _MainScreenState extends State<MainScreen> {
         return HomeView();
       case 1:
         return WorksView();
-      // case 0:
-      //   return HomeView();
+      case 2:
+        return AboutView();
     }
   }
 

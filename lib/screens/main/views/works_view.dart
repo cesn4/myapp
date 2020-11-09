@@ -4,6 +4,7 @@ import 'package:myapp/constants/categories.dart';
 import 'package:myapp/constants/projects.dart';
 import 'package:myapp/constants/routes.dart';
 import 'package:myapp/screens/project/project_screen.dart';
+import 'package:myapp/widgets/background_wrapper.dart';
 import 'package:myapp/widgets/category_item.dart';
 import 'package:myapp/widgets/project_item.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -43,49 +44,33 @@ class _WorksViewState extends State<WorksView> {
               isActive: projects[_activeIndex].category.contains(e),
             ))
         .toList();
-    return Container(
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                fit: BoxFit.cover,
-                image: NetworkImage(
-                    'https://i.picsum.photos/id/1018/3914/2935.jpg?hmac=3N43cQcvTE8NItexePvXvYBrAoGbRssNMpuvuWlwMKg'))),
-        child: Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: FractionalOffset.topCenter,
-                    end: FractionalOffset.bottomCenter,
-                    colors: [
-                  Colors.transparent,
-                  Colors.black.withOpacity(0.7),
-                ],
-                    stops: [
-                  0.0,
-                  0.8
-                ])),
-            child: Padding(
-              padding: const EdgeInsets.only(right: 150),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Container(
-                    height: 200,
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: projectCategories),
-                  ),
-                  CarouselSlider(
-                      options: CarouselOptions(
-                        onPageChanged: (index, reason) =>
-                            _changeActiveIndex(index),
-                        aspectRatio: 1,
-                        viewportFraction: 0.15,
-                        scrollDirection: Axis.vertical,
-                        autoPlay: true,
-                      ),
-                      items: projectTitles)
-                ],
-              ),
-            )));
+    return BackgroundWrapper(
+      image:
+          'https://i.picsum.photos/id/1018/3914/2935.jpg?hmac=3N43cQcvTE8NItexePvXvYBrAoGbRssNMpuvuWlwMKg',
+      child: Padding(
+        padding: const EdgeInsets.only(right: 150),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Container(
+              height: 200,
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: projectCategories),
+            ),
+            CarouselSlider(
+                options: CarouselOptions(
+                  onPageChanged: (index, reason) => _changeActiveIndex(index),
+                  aspectRatio: 1,
+                  viewportFraction: 0.15,
+                  scrollDirection: Axis.vertical,
+                  autoPlay: true,
+                ),
+                items: projectTitles)
+          ],
+        ),
+      ),
+    );
   }
 }
