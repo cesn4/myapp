@@ -13,11 +13,11 @@ class ContactView extends StatefulWidget {
 }
 
 class _ContactViewState extends State<ContactView> {
-  String _name;
-  String _profesion;
-  String _movie;
-  String _callBack;
-  String _contact;
+  String _name = '';
+  String _profesion = '';
+  String _movie = '';
+  String _callBack = '';
+  String _contact = '';
   @override
   Widget build(BuildContext context) {
     print(_name);
@@ -164,11 +164,12 @@ class _ContactViewState extends State<ContactView> {
       LetterStates stateType,
       String state}) {
     return DropdownButton(
-      value: state,
+      // value: state,
+      underline: Container(),
       iconSize: 0,
       elevation: 0,
       dropdownColor: ThemeColor.dark.withOpacity(0.8),
-      hint: _buildHint(hint),
+      hint: state == '' ? _buildHint(hint) : _buildOption(state),
       items: options.map((p) => _buildOption(p)).toList(),
       onChanged: (value) {
         print('I work');
