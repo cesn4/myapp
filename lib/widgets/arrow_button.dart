@@ -28,7 +28,7 @@ class _ArrowButtonState extends State<ArrowButton> {
         cursor: SystemMouseCursors.click,
         child: GestureDetector(
           onTap: widget.onTap,
-                  child: Icon(
+          child: Icon(
             Icons.arrow_back,
             color: _hovering ? ThemeColor.light : ThemeColor.inactiveLight,
             size: 40,

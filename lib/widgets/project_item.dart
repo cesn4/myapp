@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:myapp/theme/colors.dart';
+import 'package:myapp/theme/font.dart';
 
 class ProjectItem extends StatelessWidget {
   final String title;
@@ -18,7 +19,7 @@ class ProjectItem extends StatelessWidget {
           title,
           textAlign: TextAlign.end,
           style: TextStyle(
-              fontSize: 60,
+              fontSize: ThemeFontSize.large,
               fontWeight: FontWeight.w800,
               color: isActive ? ThemeColor.light : ThemeColor.inactiveLight),
         ),

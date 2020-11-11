@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:myapp/theme/colors.dart';
+import 'package:myapp/theme/duration.dart';
+import 'package:myapp/theme/font.dart';
 
 class ClassicButton extends StatefulWidget {
   @override
@@ -23,18 +25,18 @@ class _ClassicButtonState extends State<ClassicButton> {
       onExit: (e) => _mouseEnter(false),
       child: FlatButton(
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
+          duration: ThemeDuration.classic,
           decoration: BoxDecoration(
-              color: _hovering ? ThemeColor.inactiveLight : ThemeColor.transparent,
-              border: Border.all(color: Colors.white, width: 2.0)),
+              color:
+                  _hovering ? ThemeColor.inactiveLight : ThemeColor.transparent,
+              border: Border.all(color: ThemeColor.light, width: 2.0)),
           padding: const EdgeInsets.symmetric(horizontal: 25.0, vertical: 15.0),
           child: Text(
             'View Work',
             style: TextStyle(
-              fontSize: 20,
-              // color: _hovering ? ThemeColor.dark : ThemeColor.light,
-              color: ThemeColor.light
-            ),
+                fontSize: ThemeFontSize.small,
+                // color: _hovering ? ThemeColor.dark : ThemeColor.light,
+                color: ThemeColor.light),
           ),
         ),
         onPressed: () {},

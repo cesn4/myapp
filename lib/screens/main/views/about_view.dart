@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/theme/colors.dart';
+import 'package:myapp/theme/spacing.dart';
 import 'package:myapp/widgets/background_wrapper.dart';
 
 class AboutView extends StatelessWidget {
@@ -13,7 +14,7 @@ class AboutView extends StatelessWidget {
         child: Align(
           alignment: Alignment.centerLeft,
           child: Padding(
-            padding: const EdgeInsets.all(50),
+            padding: EdgeInsets.all(ThemeSpacing.large),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/screens/main/views/about_view.dart';
-import 'package:myapp/screens/main/views/contact_view.dart';
+import 'package:myapp/screens/main/views/contact_view/contact_view.dart';
 import 'package:myapp/screens/main/views/home_view.dart';
 import 'package:myapp/screens/main/views/works_view.dart';
 import 'package:myapp/widgets/navigation_bar.dart';

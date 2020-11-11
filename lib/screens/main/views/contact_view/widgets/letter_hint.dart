@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/theme/colors.dart';
+import 'package:myapp/theme/font.dart';
 
 class LetterHint extends StatelessWidget {
   final String text;
@@ -13,7 +14,7 @@ class LetterHint extends StatelessWidget {
         text,
         textAlign: TextAlign.center,
         style: TextStyle(
-            fontSize: 25,
+            fontSize: ThemeFontSize.medium,
             fontWeight: FontWeight.w800,
             color: ThemeColor.inactiveLight),
       ),

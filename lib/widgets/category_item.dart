@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/theme/colors.dart';
+import 'package:myapp/theme/duration.dart';
+import 'package:myapp/theme/font.dart';
+import 'package:myapp/theme/spacing.dart';
 
 class CategoryItem extends StatelessWidget {
   final bool isActive;
@@ -15,16 +18,17 @@ class CategoryItem extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
-          margin: EdgeInsets.only(right: isActive? 20 : 50),
+          duration: ThemeDuration.classic,
+          margin: EdgeInsets.only(
+              right: isActive ? ThemeSpacing.medium / 2 : ThemeSpacing.large),
           color: ThemeColor.light,
-          width: isActive? 30 : 0,
+          width: isActive ? 30 : 0,
           height: 1,
         ),
         Text(
           title,
           style: TextStyle(
-              fontSize: 20,
+              fontSize: ThemeFontSize.small,
               color: isActive ? ThemeColor.light : ThemeColor.inactiveLight),
         ),
       ],

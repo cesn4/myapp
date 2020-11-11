@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:myapp/theme/colors.dart';
+import 'package:myapp/theme/duration.dart';
+import 'package:myapp/theme/spacing.dart';
 
 class NavItem extends StatefulWidget {
   final String title;
@@ -30,15 +32,13 @@ class _NavItemState extends State<NavItem> {
       child: GestureDetector(
         onTap: widget.onPressed,
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
-          padding: EdgeInsets.all(10.0),
+          duration: ThemeDuration.classic,
+          padding: EdgeInsets.all(ThemeSpacing.small),
           child: RotatedBox(
             child: Text(
               widget.title,
               style: TextStyle(
-                color: _hovering
-                    ? ThemeColor.light
-                    : Colors.white.withOpacity(0.8),
+                color: _hovering ? ThemeColor.light : ThemeColor.pseudoLight,
                 fontSize: 15.0,
               ),
             ),

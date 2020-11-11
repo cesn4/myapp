@@ -42,7 +42,6 @@ class LetterDropInput extends StatelessWidget {
           .map((option) => _buildDropOption(text: option, active: false))
           .toList(),
       onChanged: (value) {
-        print('I work');
         stateControler(stateType, value);
       },
     );

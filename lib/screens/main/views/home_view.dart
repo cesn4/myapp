@@ -2,6 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:myapp/constants/titles.dart';
+import 'package:myapp/theme/colors.dart';
+import 'package:myapp/theme/font.dart';
+import 'package:myapp/theme/spacing.dart';
 import 'package:myapp/widgets/background_wrapper.dart';
 import 'package:myapp/widgets/classic_button.dart';
 
@@ -45,7 +48,7 @@ class _HomeViewState extends State<HomeView> {
       image:
           'https://i.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68',
       child: Padding(
-        padding: const EdgeInsets.all(150.0),
+        padding: EdgeInsets.all(ThemeSpacing.max),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -54,9 +57,9 @@ class _HomeViewState extends State<HomeView> {
               Text(
                 titles[_currentTitleIndex],
                 style: TextStyle(
-                    fontSize: 70,
+                    fontSize: ThemeFontSize.large,
                     fontWeight: FontWeight.w800,
-                    color: Colors.white),
+                    color: ThemeColor.light),
               ),
               ClassicButton(),
             ],

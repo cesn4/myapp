@@ -5,6 +5,7 @@ import 'package:myapp/screens/main/views/contact_view/widgets/letter_hint.dart';
 import 'package:myapp/screens/main/views/contact_view/widgets/letter_option.dart';
 import 'package:myapp/screens/main/views/contact_view/widgets/letter_text.dart';
 import 'package:myapp/theme/colors.dart';
+import 'package:myapp/theme/spacing.dart';
 import 'package:myapp/widgets/background_wrapper.dart';
 import 'package:myapp/widgets/classic_button.dart';
 
@@ -52,7 +53,7 @@ class _ContactViewState extends State<ContactView> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(bottom: 40.0),
+                    padding: EdgeInsets.only(bottom: ThemeSpacing.medium),
                     child: LetterText(text: 'Hello Mindaugas,'),
                   ),
                   Row(
@@ -135,7 +136,7 @@ class _ContactViewState extends State<ContactView> {
                     children: [LetterText(text: "See ya later!!")],
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(40.0),
+                    padding: EdgeInsets.all(ThemeSpacing.medium),
                     child: ClassicButton(),
                   )
                 ],

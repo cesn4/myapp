@@ -4,6 +4,7 @@ import 'package:myapp/constants/categories.dart';
 import 'package:myapp/constants/projects.dart';
 import 'package:myapp/constants/routes.dart';
 import 'package:myapp/screens/project/project_screen.dart';
+import 'package:myapp/theme/spacing.dart';
 import 'package:myapp/widgets/background_wrapper.dart';
 import 'package:myapp/widgets/category_item.dart';
 import 'package:myapp/widgets/project_item.dart';
@@ -48,7 +49,7 @@ class _WorksViewState extends State<WorksView> {
       image:
           'https://i.picsum.photos/id/1018/3914/2935.jpg?hmac=3N43cQcvTE8NItexePvXvYBrAoGbRssNMpuvuWlwMKg',
       child: Padding(
-        padding: const EdgeInsets.only(right: 150),
+        padding: EdgeInsets.only(right: ThemeSpacing.max),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

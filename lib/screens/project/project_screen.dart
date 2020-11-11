@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:myapp/models/project_model.dart';
 import 'package:myapp/theme/colors.dart';
+import 'package:myapp/theme/spacing.dart';
 import 'package:myapp/widgets/arrow_button.dart';
 import 'package:myapp/widgets/background_wrapper.dart';
 
@@ -20,7 +21,7 @@ class ProjectScreen extends StatelessWidget {
           child: Align(
             alignment: Alignment.bottomLeft,
             child: Container(
-              padding: EdgeInsets.all(50),
+              padding: EdgeInsets.all(ThemeSpacing.large),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
