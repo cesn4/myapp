@@ -40,7 +40,7 @@ class _ContactViewState extends State<ContactView> {
                     children: [
                       _buildText("I'm "),
                       _buildDropInput(
-                          hint: 'name',
+                          hint: 'the name',
                           options: ['Van Kenobi', 'Darth Vader', 'Kavasaki'],
                           state: _name,
                           stateType: LetterStates.name),
@@ -52,7 +52,7 @@ class _ContactViewState extends State<ContactView> {
                     children: [
                       _buildText("My favorite movie is "),
                       _buildDropInput(
-                          hint: 'name it',
+                          hint: 'name the movie',
                           options: [
                             'Start Wars',
                             'Harry Potter',
@@ -68,7 +68,7 @@ class _ContactViewState extends State<ContactView> {
                     children: [
                       _buildText("we could "),
                       _buildDropInput(
-                          hint: 'do what?!',
+                          hint: 'do somthing?!',
                           options: [
                             'colaborate in crime',
                             'discuss economical problems',
@@ -83,7 +83,7 @@ class _ContactViewState extends State<ContactView> {
                     children: [
                       _buildText("Write or Call me back "),
                       _buildDropInput(
-                          hint: 'how????',
+                          hint: 'how i wil do it?????',
                           options: ['email', 'social link', 'mobile'],
                           state: _callBack,
                           stateType: LetterStates.callBack),
@@ -143,7 +143,7 @@ class _ContactViewState extends State<ContactView> {
     );
   }
 
-  DropdownMenuItem<dynamic> _buildOption(String text) {
+  DropdownMenuItem<dynamic> _buildOption(String text, bool active) {
     return DropdownMenuItem(
         value: text,
         child: Align(
@@ -151,7 +151,7 @@ class _ContactViewState extends State<ContactView> {
             text,
             textAlign: TextAlign.center,
             style: TextStyle(
-                fontSize: 25,
+                fontSize: active ? 25 : 18,
                 fontWeight: FontWeight.w800,
                 color: ThemeColor.light),
           ),
@@ -169,8 +169,8 @@ class _ContactViewState extends State<ContactView> {
       iconSize: 0,
       elevation: 0,
       dropdownColor: ThemeColor.dark.withOpacity(0.8),
-      hint: state == '' ? _buildHint(hint) : _buildOption(state),
-      items: options.map((p) => _buildOption(p)).toList(),
+      hint: state == '' ? _buildHint(hint) : _buildOption(state, true),
+      items: options.map((p) => _buildOption(p, false)).toList(),
       onChanged: (value) {
         print('I work');
         _stateEditingControler(stateType, value);
