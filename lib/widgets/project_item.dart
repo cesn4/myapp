@@ -19,7 +19,7 @@ class ProjectItem extends StatelessWidget {
           title,
           textAlign: TextAlign.end,
           style: TextStyle(
-              fontSize: ThemeFontSize.large,
+              fontSize: ThemeFontSize.large - 10.0,
               fontWeight: FontWeight.w800,
               color: isActive ? ThemeColor.light : ThemeColor.inactiveLight),
         ),

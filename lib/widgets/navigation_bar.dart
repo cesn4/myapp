@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/constants/routes.dart';
 import 'package:myapp/widgets/nav_icon.dart';
 import 'package:myapp/widgets/nav_item.dart';
 

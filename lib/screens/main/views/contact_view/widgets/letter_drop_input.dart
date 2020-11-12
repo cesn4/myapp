@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/constants/enums.dart';
-import 'package:myapp/screens/main/views/contact_view/contact_view.dart';
 import 'package:myapp/screens/main/views/contact_view/widgets/letter_hint.dart';
 import 'package:myapp/screens/main/views/contact_view/widgets/letter_option.dart';
 import 'package:myapp/theme/colors.dart';

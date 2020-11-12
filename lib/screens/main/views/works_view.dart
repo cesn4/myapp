@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:myapp/constants/categories.dart';
 import 'package:myapp/constants/projects.dart';
-import 'package:myapp/constants/routes.dart';
 import 'package:myapp/screens/project/project_screen.dart';
 import 'package:myapp/theme/spacing.dart';
 import 'package:myapp/widgets/background_wrapper.dart';

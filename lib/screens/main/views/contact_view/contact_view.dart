@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/constants/enums.dart';
 import 'package:myapp/screens/main/views/contact_view/widgets/letter_drop_input.dart';
-import 'package:myapp/screens/main/views/contact_view/widgets/letter_hint.dart';
-import 'package:myapp/screens/main/views/contact_view/widgets/letter_option.dart';
 import 'package:myapp/screens/main/views/contact_view/widgets/letter_text.dart';
-import 'package:myapp/theme/colors.dart';
 import 'package:myapp/theme/spacing.dart';
 import 'package:myapp/widgets/background_wrapper.dart';
 import 'package:myapp/widgets/classic_button.dart';
@@ -42,6 +39,7 @@ class _ContactViewState extends State<ContactView> {
 
   @override
   Widget build(BuildContext context) {
+    double width = MediaQuery.of(context).size.width;
     return BackgroundWrapper(
         image:
             'https://i.picsum.photos/id/1033/2048/1365.jpg?hmac=zEuPfX7t6U866nzXjWF41bf-uxkKOnf1dDrHXmhcK-Q',
@@ -50,6 +48,7 @@ class _ContactViewState extends State<ContactView> {
             Center(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
@@ -115,30 +114,43 @@ class _ContactViewState extends State<ContactView> {
                       LetterText(text: " below."),
                     ],
                   ),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      LetterDropInput(
-                        hint: 'email',
-                        state: _contact,
-                        options: [
-                          'email@email.com',
-                          'social@link.lt',
-                          'mobile@maybe.dart'
-                        ],
-                        stateType: LetterStates.contact,
-                        stateControler: _stateEditingControler,
-                      ),
-                    ],
+                  Container(
+                    margin: EdgeInsets.only(top: ThemeSpacing.medium),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        LetterDropInput(
+                          hint: 'email',
+                          state: _contact,
+                          options: [
+                            'email@email.com',
+                            'social@link.lt',
+                            'mobile@maybe.dart'
+                          ],
+                          stateType: LetterStates.contact,
+                          stateControler: _stateEditingControler,
+                        ),
+                      ],
+                    ),
                   ),
                   Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [LetterText(text: "See ya later!!")],
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(ThemeSpacing.medium),
-                    child: ClassicButton(),
-                  )
+                  ConstrainedBox(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                            margin: EdgeInsets.only(top: ThemeSpacing.medium),
+                            child: ClassicButton(
+                              title: 'Send Email',
+                              onPressed: () {},
+                            )),
+                      ],
+                    ),
+                    constraints: BoxConstraints(maxWidth: width * 0.4),
+                  ),
                 ],
               ),
             )
