@@ -8,7 +8,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -19,6 +18,7 @@ class MyApp extends StatelessWidget {
       initialRoute: Routes.startupScreenRoute,
       routes: {
         Routes.mainScreenRoute: (context) => MainScreen(),
+        Routes.startupScreenRoute: (context) => StartupScreen(),
       },
     );
   }

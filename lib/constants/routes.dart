@@ -1,4 +1,4 @@
 class Routes {
   static String mainScreenRoute = '/';
-  static String startupScreenRoute = '/';
+  static String startupScreenRoute = '/startup';
 }

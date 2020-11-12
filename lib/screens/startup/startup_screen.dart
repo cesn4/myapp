@@ -27,7 +27,6 @@ class _StartupScreenState extends State<StartupScreen> {
 
   @override
   void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
     precacheImage(myImage.image, context).then((result) {
       setState(() {
         _imagesLoaded = true;
