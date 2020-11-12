@@ -16,14 +16,21 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   int _currentTitleIndex = 0;
   Timer _titleTimer;
-
+  Image myImage;
   @override
   void initState() {
     super.initState();
+    myImage = Image.network(
+        'https://i.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68');
     if (mounted) {
       _titleTimer =
           Timer.periodic(Duration(seconds: 2), (Timer t) => updateTitleIndex());
     }
+  }
+
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    precacheImage(myImage.image, context);
   }
 
   @override

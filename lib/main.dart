@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/constants/routes.dart';
 import 'package:myapp/screens/main/main_screen.dart';
+import 'package:myapp/screens/startup/startup_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: Routes.mainScreenRoute,
+      initialRoute: Routes.startupScreenRoute,
       routes: {
         Routes.mainScreenRoute: (context) => MainScreen(),
       },
