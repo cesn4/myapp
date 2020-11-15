@@ -12,7 +12,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _currentViewIndex = 0;
+  int _currentViewIndex = 1;
   Image myImage;
   Image myImage2;
   Image myImage3;
@@ -82,7 +82,7 @@ class _MainScreenState extends State<MainScreen> {
               children: [
                 _getCurrentView(),
                 Positioned(
-                  top:50,
+                  top: 50,
                   left: 25,
                   child: NavigationBar(
                     horizontal: true,
