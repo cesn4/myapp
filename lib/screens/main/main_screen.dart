@@ -3,6 +3,7 @@ import 'package:myapp/screens/main/views/about_view.dart';
 import 'package:myapp/screens/main/views/contact_view/contact_view.dart';
 import 'package:myapp/screens/main/views/home_view.dart';
 import 'package:myapp/screens/main/views/works_view.dart';
+import 'package:myapp/theme/breakpoints.dart';
 import 'package:myapp/widgets/navigation_bar.dart';
 
 class MainScreen extends StatefulWidget {
@@ -73,23 +74,48 @@ class _MainScreenState extends State<MainScreen> {
       );
     }
     return Scaffold(
-      body: Container(
-        child: Stack(
-          children: [
-            _getCurrentView(),
-            Positioned(
-              top: 50,
-              right: 50,
-              child: NavigationBar(
-                homeViewTrigger: () => _setCurrentView(0),
-                worksViewTrigger: () => _setCurrentView(1),
-                aboutViewTrigger: () => _setCurrentView(2),
-                contactViewTrigger: () => _setCurrentView(3),
-              ),
+      body: LayoutBuilder(builder: (context, constrains) {
+        bool isMobile = constrains.maxWidth <= Breakpoints.phone;
+        if (isMobile) {
+          return Container(
+            child: Stack(
+              children: [
+                _getCurrentView(),
+                Positioned(
+                  top:50,
+                  left: 25,
+                  child: NavigationBar(
+                    horizontal: true,
+                    homeViewTrigger: () => _setCurrentView(0),
+                    worksViewTrigger: () => _setCurrentView(1),
+                    aboutViewTrigger: () => _setCurrentView(2),
+                    contactViewTrigger: () => _setCurrentView(3),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
+          );
+        } else {
+          return Container(
+            child: Stack(
+              children: [
+                _getCurrentView(),
+                Positioned(
+                  top: 50,
+                  right: 50,
+                  child: NavigationBar(
+                    horizontal: false,
+                    homeViewTrigger: () => _setCurrentView(0),
+                    worksViewTrigger: () => _setCurrentView(1),
+                    aboutViewTrigger: () => _setCurrentView(2),
+                    contactViewTrigger: () => _setCurrentView(3),
+                  ),
+                ),
+              ],
+            ),
+          );
+        }
+      }),
     );
   }
 }

@@ -7,8 +7,12 @@ import 'package:myapp/theme/spacing.dart';
 class NavItem extends StatefulWidget {
   final String title;
   final Function onPressed;
+  final bool horizontal;
 
-  NavItem({@required this.title, @required this.onPressed});
+  NavItem(
+      {@required this.title,
+      @required this.onPressed,
+      @required this.horizontal});
 
   @override
   _NavItemState createState() => _NavItemState();
@@ -42,7 +46,7 @@ class _NavItemState extends State<NavItem> {
                 fontSize: 15.0,
               ),
             ),
-            quarterTurns: 1,
+            quarterTurns: widget.horizontal ? 0 : 1
           ),
         ),
       ),
