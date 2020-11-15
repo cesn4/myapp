@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:myapp/constants/titles.dart';
+import 'package:myapp/theme/breakpoints.dart';
 import 'package:myapp/theme/colors.dart';
 import 'package:myapp/theme/font.dart';
 import 'package:myapp/theme/spacing.dart';
@@ -51,31 +52,42 @@ class _HomeViewState extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-    return BackgroundWrapper(
-      image:
-          'https://i.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68',
-      child: Padding(
-        padding: EdgeInsets.all(ThemeSpacing.max),
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(),
-              Text(
-                titles[_currentTitleIndex],
-                style: TextStyle(
-                    fontSize: ThemeFontSize.large,
-                    fontWeight: FontWeight.w800,
-                    color: ThemeColor.light),
-              ),
-              ClassicButton(
-                title: 'View Work',
-                onPressed: () {},
-              ),
-            ],
+    return LayoutBuilder(builder: (context, constrains) {
+      bool isMobile = constrains.maxWidth <= Breakpoints.phone;
+      return BackgroundWrapper(
+        image:
+            'https://i.picsum.photos/id/10/2500/1667.jpg?hmac=J04WWC_ebchx3WwzbM-Z4_KC_LeLBWr5LZMaAkWkF68',
+        child: Padding(
+          padding: isMobile
+              ? EdgeInsets.symmetric(horizontal: 25, vertical: 50)
+              : EdgeInsets.all(ThemeSpacing.max),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(),
+                Text(
+                  titles[_currentTitleIndex],
+                  textAlign: TextAlign.center,
+                  style: isMobile
+                      ? TextStyle(
+                          fontSize: ThemeFontSize.large * 0.8,
+                          fontWeight: FontWeight.w800,
+                          color: ThemeColor.light)
+                      : TextStyle(
+                          fontSize: ThemeFontSize.large,
+                          fontWeight: FontWeight.w800,
+                          color: ThemeColor.light),
+                ),
+                ClassicButton(
+                  title: 'View Work',
+                  onPressed: () {},
+                ),
+              ],
+            ),
           ),
         ),
-      ),
-    );
+      );
+    });
   }
 }
