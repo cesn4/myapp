@@ -64,7 +64,7 @@ class _MobileNavigationState extends State<MobileNavigation> {
               onPressed: widget.homeViewTrigger,
               iconSize: iconSize),
           FancyButton(
-              icon: Icons.person,
+              icon: Icons.contact_mail,
               isActive: widget.activeButton == 3,
               onPressed: widget.contactViewTrigger,
               iconSize: iconSize),
