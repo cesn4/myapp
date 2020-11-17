@@ -79,10 +79,11 @@ class _HomeViewState extends State<HomeView> {
                           fontWeight: FontWeight.w800,
                           color: ThemeColor.light),
                 ),
-                ClassicButton(
-                  title: 'View Work',
-                  onPressed: () {},
-                ),
+                isMobile
+                    ? Container() : ClassicButton(
+                        title: 'View Work',
+                        onPressed: () {},
+                      )
               ],
             ),
           ),

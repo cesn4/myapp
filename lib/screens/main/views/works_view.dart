@@ -4,6 +4,7 @@ import 'package:myapp/constants/categories.dart';
 import 'package:myapp/constants/projects.dart';
 import 'package:myapp/screens/project/project_screen.dart';
 import 'package:myapp/theme/breakpoints.dart';
+import 'package:myapp/theme/colors.dart';
 import 'package:myapp/theme/spacing.dart';
 import 'package:myapp/widgets/background_wrapper.dart';
 import 'package:myapp/widgets/category_item.dart';
@@ -40,8 +41,9 @@ class _WorksViewState extends State<WorksView> {
                           ProjectScreen(project: projects[e.key]))),
             ))
         .toList();
-    List projectCategories = categories
+    List projectCategories(bool isHorizontal) => categories
         .map((e) => CategoryItem(
+              isHorizontal: isHorizontal,
               title: e,
               isActive: projects[_activeIndex].category.contains(e),
             ))
@@ -59,8 +61,8 @@ class _WorksViewState extends State<WorksView> {
                 child: CarouselSlider(
                     options: CarouselOptions(
                       height: constrains.maxHeight,
-                      enlargeCenterPage: true,
-                      enlargeStrategy: CenterPageEnlargeStrategy.scale,
+                      // enlargeCenterPage: true,
+                      // enlargeStrategy: CenterPageEnlargeStrategy.scale,
                       onPageChanged: (index, reason) =>
                           _changeActiveIndex(index),
                       aspectRatio: 1.5,
@@ -71,13 +73,26 @@ class _WorksViewState extends State<WorksView> {
                     items: projectTitles(isMobile)),
               ),
               Positioned(
-                bottom: 50,
+                top: 0,
                 child: Container(
-                  height: 200,
-                  child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: FractionalOffset.topCenter,
+                          end: FractionalOffset.bottomCenter,
+                          colors: [
+                        ThemeColor.dark,
+                        ThemeColor.transparent,
+                      ],
+                          stops: [
+                        0.1,
+                        1.0
+                      ])),
+                  width: constrains.maxWidth,
+                  height: 230,
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: projectCategories),
+                      children: projectCategories(false)),
                 ),
               ),
             ],
@@ -97,7 +112,7 @@ class _WorksViewState extends State<WorksView> {
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: projectCategories),
+                      children: projectCategories(true)),
                 ),
                 CarouselSlider(
                     options: CarouselOptions(
