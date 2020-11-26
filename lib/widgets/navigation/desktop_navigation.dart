@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/widgets/nav_icon.dart';
-import 'package:myapp/widgets/nav_item.dart';
+import 'package:myapp/widgets/navigation/nav_icon.dart';
+import 'package:myapp/widgets/navigation/nav_item.dart';
 
-class NavigationBar extends StatelessWidget {
+class DesktopNavigation extends StatelessWidget {
   final Function homeViewTrigger;
   final Function worksViewTrigger;
   final Function aboutViewTrigger;
   final Function contactViewTrigger;
   final bool horizontal;
 
-  NavigationBar({
+  DesktopNavigation({
     @required this.homeViewTrigger,
     @required this.worksViewTrigger,
     @required this.aboutViewTrigger,

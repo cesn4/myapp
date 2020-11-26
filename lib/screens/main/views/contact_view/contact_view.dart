@@ -3,8 +3,8 @@ import 'package:myapp/constants/enums.dart';
 import 'package:myapp/screens/main/views/contact_view/widgets/letter_drop_input.dart';
 import 'package:myapp/screens/main/views/contact_view/widgets/letter_text.dart';
 import 'package:myapp/theme/spacing.dart';
-import 'package:myapp/widgets/background_wrapper.dart';
-import 'package:myapp/widgets/classic_button.dart';
+import 'package:myapp/widgets/background/background_wrapper.dart';
+import 'package:myapp/widgets/buttons/classic_button.dart';
 
 class ContactView extends StatefulWidget {
   const ContactView({Key key}) : super(key: key);

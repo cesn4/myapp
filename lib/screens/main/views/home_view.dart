@@ -6,8 +6,8 @@ import 'package:myapp/theme/breakpoints.dart';
 import 'package:myapp/theme/colors.dart';
 import 'package:myapp/theme/font.dart';
 import 'package:myapp/theme/spacing.dart';
-import 'package:myapp/widgets/background_wrapper.dart';
-import 'package:myapp/widgets/classic_button.dart';
+import 'package:myapp/widgets/background/background_wrapper.dart';
+import 'package:myapp/widgets/buttons/classic_button.dart';
 
 class HomeView extends StatefulWidget {
   @override

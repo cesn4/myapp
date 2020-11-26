@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:myapp/models/project_model.dart';
 import 'package:myapp/theme/colors.dart';
 import 'package:myapp/theme/spacing.dart';
-import 'package:myapp/widgets/arrow_button.dart';
-import 'package:myapp/widgets/background_wrapper.dart';
+import 'package:myapp/widgets/buttons/arrow_button.dart';
+import 'package:myapp/widgets/background/background_wrapper.dart';
 
 class ProjectScreen extends StatelessWidget {
   final ProjectModel project;

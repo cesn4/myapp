@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/screens/main/views/about_view.dart';
+import 'package:myapp/screens/main/views/about_view/about_view.dart';
 import 'package:myapp/screens/main/views/contact_view/contact_view.dart';
 import 'package:myapp/screens/main/views/home_view.dart';
 import 'package:myapp/screens/main/views/works_view.dart';
 import 'package:myapp/theme/breakpoints.dart';
-import 'package:myapp/widgets/mobile_navigation.dart';
-import 'package:myapp/widgets/navigation_bar.dart';
+import 'package:myapp/widgets/navigation/mobile_navigation.dart';
+import 'package:myapp/widgets/navigation/desktop_navigation.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -103,7 +103,7 @@ class _MainScreenState extends State<MainScreen> {
                 Positioned(
                   top: 50,
                   right: 50,
-                  child: NavigationBar(
+                  child: DesktopNavigation(
                     horizontal: false,
                     homeViewTrigger: () => _setCurrentView(0),
                     worksViewTrigger: () => _setCurrentView(1),

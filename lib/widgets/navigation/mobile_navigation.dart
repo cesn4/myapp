@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myapp/theme/colors.dart';
-import 'package:myapp/widgets/fancy_icon.dart';
+import 'package:myapp/widgets/buttons/fancy_button.dart';
 
 class MobileNavigation extends StatefulWidget {
   final Function homeViewTrigger;
@@ -28,7 +28,7 @@ class _MobileNavigationState extends State<MobileNavigation> {
     double width = MediaQuery.of(context).size.width;
     double iconSize = 35.0;
     return Container(
-      padding: EdgeInsets.only(bottom: 15.0),
+      padding: EdgeInsets.only(bottom: 30.0),
       decoration: BoxDecoration(
           gradient: LinearGradient(
               begin: FractionalOffset.topCenter,

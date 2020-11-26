@@ -6,8 +6,8 @@ import 'package:myapp/screens/project/project_screen.dart';
 import 'package:myapp/theme/breakpoints.dart';
 import 'package:myapp/theme/colors.dart';
 import 'package:myapp/theme/spacing.dart';
-import 'package:myapp/widgets/background_wrapper.dart';
-import 'package:myapp/widgets/category_item.dart';
+import 'package:myapp/widgets/background/background_wrapper.dart';
+import 'package:myapp/widgets/category/category_item.dart';
 import 'package:myapp/widgets/project_item.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -57,7 +57,7 @@ class _WorksViewState extends State<WorksView> {
           child: Stack(
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25.0),
+                padding: EdgeInsets.symmetric(horizontal: 50.0),
                 child: CarouselSlider(
                     options: CarouselOptions(
                       height: constrains.maxHeight,
@@ -66,34 +66,11 @@ class _WorksViewState extends State<WorksView> {
                       onPageChanged: (index, reason) =>
                           _changeActiveIndex(index),
                       aspectRatio: 1.5,
-                      viewportFraction: 0.15,
+                      viewportFraction: 0.12,
                       scrollDirection: Axis.vertical,
                       autoPlay: true,
                     ),
                     items: projectTitles(isMobile)),
-              ),
-              Positioned(
-                top: 0,
-                child: Container(
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: FractionalOffset.topCenter,
-                          end: FractionalOffset.bottomCenter,
-                          colors: [
-                        ThemeColor.dark,
-                        ThemeColor.transparent,
-                      ],
-                          stops: [
-                        0.1,
-                        1.0
-                      ])),
-                  width: constrains.maxWidth,
-                  height: 230,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: projectCategories(false)),
-                ),
               ),
             ],
           ),
